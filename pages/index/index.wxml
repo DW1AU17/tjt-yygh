@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="out-count">
+  <view class="container">
+    <image src="../../assets/logo.jpg"></image>
+    <view class="form">
+      <view>门诊号:</view> 
+      <view class="number">
+        <input 
+          placeholder="请输入您的门诊号" 
+          value="{{outpatient}}" 
+          bindchange="getValue"></input>
+      </view>
+      <view class="id-card">身份证号/社保卡号:</view> 
+      <view class="number">
+        <input 
+          placeholder="请输入您的门诊号" 
+          value="{{idCard}}" 
+          bindchange="getValueId"></input>
+      </view>
+    </view>
+    <button size="defualt" type="primary" bindtap="toDepartment">确定</button>
+    <view class="fs26">如有疑问,请拨打 <text bindtap="callPhone">{{telephoneNumber}}</text> 预约电话</view>
+  </view>
+</view>

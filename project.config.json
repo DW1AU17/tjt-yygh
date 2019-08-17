@@ -1,0 +1,76 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wx9d9f071627128734",
+	"projectname": "%E9%A2%84%E7%BA%A6%E6%8C%82%E5%8F%B7",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "医生科室",
+					"pathName": "pages/department/department",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "医生号源",
+					"pathName": "pages/doctorNumList/doctorNumList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "已预约",
+					"pathName": "pages/order/order",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,30 @@
+/**index.wxss**/
+.container .form {
+  width: 65%;
+  margin-top: 15%;
+  margin-bottom: 30rpx;
+}
+.number {
+  border: 1rpx solid #999;
+  border-radius: 10rpx;
+  height: 70rpx;
+  padding-left: 15rpx;
+  margin-top: 15rpx;
+}
+.number input {
+  height: 100%;
+}
+button {
+  width: 65%;
+  margin-bottom: 20rpx;
+}
+image {
+  width: 400rpx;
+  height: 350rpx;
+}
+.id-card {
+  margin-top: 20rpx;
+}
+.fs26 {
+  font-size: 26rpx;
+}

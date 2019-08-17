@@ -1,0 +1,23 @@
+.content {
+  padding: 20rpx;
+  color: #888;
+}
+.item {
+  border: 1rpx solid #888; 
+  padding: 10rpx 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.info text {
+  display: inline-block;
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: justify;
+  text-align-last: justify;
+  margin-right: 20rpx;
+  color: #666;
+}

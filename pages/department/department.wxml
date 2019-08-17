@@ -1,0 +1,24 @@
+<!--department.wxml-->
+<view class="content">
+  <scroll-view scroll-y class="left-department">
+    <view 
+      wx:for="{{depList}}" 
+      wx:key="id" 
+      bindtap="doctorShow" 
+      data-deptId="{{item.id}}" 
+      class="scroll-view-item {{item.id == currentNum ? 'active' : ''}}">{{item.depName}}</view>
+  </scroll-view>
+  <scroll-view scroll-y class="right-doctor">
+    <block wx:if="{{doctorList.length > 0}}">
+      <view 
+        wx:for="{{doctorList}}" 
+        wx:key="id" 
+        bindtap="toDoctorNumList" 
+        data-docId="{{item.id}}"
+        data-docName="{{item.sffName}}"
+        data-sffSummary="{{item.sffSummary}}"
+        class="scroll-view-item">{{item.sffName}}</view>
+    </block>
+    <view wx:else class="doctorNone">暂无医生</view>
+  </scroll-view>
+</view>
