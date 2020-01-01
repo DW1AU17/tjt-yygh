@@ -1,0 +1,19 @@
+<!--department.wxml-->
+<view class="content">
+  <!-- 医生 -->
+  <scroll-view scroll-y class="right-doctor">
+    <view class="dep-name">{{depName}}</view>
+    <block wx:if="{{docListShow}}">
+      <docItem 
+        wx:for="{{doctorList}}" 
+        wx:key="id" 
+        class="docItem"
+        doctorList="{{doctorList}}"
+        item="{{item}}"
+        data-item="{{item}}"
+        bind:click="goDetail"
+      />
+    </block>
+    <view wx:else class="doctorNone">暂无医生</view>
+  </scroll-view>
+</view>

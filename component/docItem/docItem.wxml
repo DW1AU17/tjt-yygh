@@ -1,0 +1,15 @@
+<view 
+    bindtap="_click" 
+    class="scroll-view-item doc-item-com"
+>
+    <image src="/assets/man.jpg" class="doc-img"/>
+    <view class="doc-txt">
+        <view class="doc-txt1">
+            {{item.sffName}}<text>  {{item.sffProfessionalWrapper || item.depName}}</text>
+        </view>
+        <view class="doc-txt2">
+            <text class="txt-info">{{item.sffSummary || '暂无'}}</text>
+        </view>
+    </view>
+</view>
+

@@ -1,23 +1,50 @@
 .content {
   padding: 20rpx;
   color: #888;
+  box-sizing: border-box;
+  height: 100%;
 }
-.item {
-  border: 1rpx solid #888; 
-  padding: 10rpx 30rpx;
-  border-radius: 20rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10rpx;
+.cont-info {
+  height: calc(100vh - 150rpx);
+  overflow: scroll;
 }
-.info text {
-  display: inline-block;
-  width: 150rpx;
+.hide {
+  display: none;
+}
+.his-record {
   height: 50rpx;
-  line-height: 50rpx;
-  text-align: justify;
-  text-align-last: justify;
-  margin-right: 20rpx;
-  color: #666;
+  text-align: center;
+  color: #444;
+  font-weight: 700;
 }
+/* xiang */
+.item {
+    border: 1rpx solid #888; 
+    padding: 10rpx 30rpx;
+    border-radius: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+  }
+  .info text {
+    display: inline-block;
+    width: 150rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: justify;
+    text-align-last: justify;
+    margin-right: 20rpx;
+    color: #666;
+  }
+  .btnPrimary {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 94%;
+    margin: 20rpx;
+  }
+  .hide {
+    display: none;
+  }
+  

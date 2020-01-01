@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/department/department",
     "pages/doctorNumList/doctorNumList",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/doctorList/doctorList"
   ],
   "window": {
     "backgroundTextStyle": "light",

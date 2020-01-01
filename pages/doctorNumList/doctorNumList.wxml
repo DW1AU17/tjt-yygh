@@ -2,23 +2,30 @@
 <view class="content">
   <view class="header">
     <view class="h-info">
-      <view class="doc-name">{{doctorInfo.docName}}</view>
-      <view class="hos-name">桐君堂（东新馆）</view>
+      <view class="doc-img">
+        <image src="../../assets/man.jpg"></image>
+      </view>
+      <view class="info-right">
+        <view class="doc-name">{{doctorInfo.docName}} <text> {{ doctorInfo.sffPW || '' }} </text> </view>
+        <view class="hos-name">桐君堂（东新馆）</view>
+      </view>
     </view>
     <view class="doc-info {{ threeText ? 'text-three-line' : ''}}" bindtap="showDetail">{{doctorInfo.sffSummary}}</view>    
   </view>
   <view class="num-list">
     <view class="scheduling">排班列表</view>
-    <block wx:if="{{list.length>0}}">
+    <block wx:if="{{schedulingList}}">
       <view wx:for="{{list}}" class="item" wx:key="depId">
         <view class="left-info">
           <view>
             <text class="date">{{item.schdate}}</text>
-            <text>{{item.ampm == 2 ? "下午" : "上午"}}</text>
+            <text class="date">{{item.week}}</text>
+            <text wx:if="{{item.ampm > 2}}">夜门诊</text>
+            <text wx:else>{{item.ampm == 2 ? "下午" : "上午"}}</text>
           </view>
           <view class="bot">
             <text class="outpatient-type">桐君堂（东新馆）{{item.numremain == 2 ? "专家" : "普通"}}</text>
-            <text class="red">{{item.regfee}}元</text>
+            <text class="red">{{item.totalFee + '.00'}}元</text>
           </view>
         </view>
         <view class="right-btn">
@@ -33,17 +40,19 @@
       </view>
     </block>
     <view wx:else class="no-scheduling">该医生暂无排班</view>
+    <button class="already" type="warn" bindtap="chooseDoc">已预约记录</button>
   </view>
   <!-- 号源 -->
-  <view class="modal" hidden="{{isModalShow}}">
+  <view class="modal" hidden="{{isModalShow}}">``
     <view class="cont">
       <view class="num-header"><text>请选择时间段</text><text bindtap="MadolTaggle">取消</text></view>
       <view class="num-content">
-        <block wx:if="{{surceOfNo.length > 0}}">
+        <block wx:if="{{numbList}}">
           <view 
             wx:for="{{surceOfNo}}"
-            wx:key="id" 
+            wx:key="id"
             class="num-item {{numFlag ? 'active' : ''}}" 
+            data-info="{{item}}"
             bindtap="toConfirm"> 
             <view class="big">{{item.serialNumber}}号</view>
             <view class="middle">{{item.visitTime}}</view>

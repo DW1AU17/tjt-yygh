@@ -7,7 +7,7 @@
 		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
-		"minified": false,
+		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"autoAudits": false,
@@ -22,7 +22,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-	"appid": "wx9d9f071627128734",
+	"appid": "wx77c3aacbff45b6a7",
 	"projectname": "%E9%A2%84%E7%BA%A6%E6%8C%82%E5%8F%B7",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -47,8 +47,12 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 2,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -68,6 +72,21 @@
 					"id": -1,
 					"name": "已预约",
 					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "医生列表",
+					"pathName": "pages/doctorList/doctorList",
+					"query": "deptId=6&depName=中医内科",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "pages/index/index",
+					"query": "outpatient=4&idCard=33010424",
 					"scene": null
 				}
 			]

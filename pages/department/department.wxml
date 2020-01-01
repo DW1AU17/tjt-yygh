@@ -1,5 +1,15 @@
 <!--department.wxml-->
 <view class="content">
+  <!-- 搜索框 -->
+  <view class="search">
+    <icon type="search" size="14" class="search_icon" />
+    <input 
+        placeholder="请输入科室/医生" 
+        bindtap="searchModalShow"
+        disabled="true"
+        />
+  </view>
+  <!-- 科室 -->
   <scroll-view scroll-y class="left-department">
     <view 
       wx:for="{{depList}}" 
@@ -8,17 +18,64 @@
       data-deptId="{{item.id}}" 
       class="scroll-view-item {{item.id == currentNum ? 'active' : ''}}">{{item.depName}}</view>
   </scroll-view>
+  <!-- 医生 -->
   <scroll-view scroll-y class="right-doctor">
-    <block wx:if="{{doctorList.length > 0}}">
-      <view 
+    <block wx:if="{{docListShow}}">
+      <docItem 
         wx:for="{{doctorList}}" 
         wx:key="id" 
-        bindtap="toDoctorNumList" 
-        data-docId="{{item.id}}"
-        data-docName="{{item.sffName}}"
-        data-sffSummary="{{item.sffSummary}}"
-        class="scroll-view-item">{{item.sffName}}</view>
+        class="docItem"
+        doctorList="{{doctorList}}"
+        item="{{item}}"
+        data-item="{{item}}"
+        bind:click="goDetail"
+      />
     </block>
     <view wx:else class="doctorNone">暂无医生</view>
   </scroll-view>
+  <!-- 搜索模态层 -->
+  <view class="search-modal {{ isModalShow ? '' : 'hide'}}">
+    <view class="search">
+      <icon type="search" size="14" class="search_icon" />
+      <input 
+          placeholder="请输入科室/医生" 
+          bindinput="setValue"
+          bindconfirm="enterConfirm"
+          value="{{searchValue}}"
+          />
+      <icon type="clear" size="14" class="search_icon icon-clear" bindtap="clearSearchInput" />
+      <view bindtap="searchModalShow">取消</view>
+    </view>
+    <block wx:if="{{!noneData}}">
+      <scroll-view scroll-y class="search-content">
+      <!-- 医生展示 -->
+        <view class="doc-list-show {{ searchDocList.length > 0 ? '' : 'hide'}}">
+          <text class="title">医生信息</text>
+          <docItem 
+            wx:for="{{searchDocList}}" 
+            wx:key="id" 
+            class="docItem"
+            doctorList="{{searchDocList}}"
+            item="{{item}}"
+            data-item="{{item}}"
+            bind:click="goDetail"
+          />
+        </view>
+
+        <!-- 科室展示 -->
+        <view class="{{ searchDepList.length > 0 ? '' : 'hide'}}">
+          <text class="title">科室信息</text>
+          <view
+            wx:for="{{searchDepList}}"
+            wx:key="id"
+            class="dep-item"
+            bindtap="docListPage"
+            data-deptId="{{item.id}}"
+            data-depName="{{item.depName}}"
+          >{{item.depName}}</view>
+        </view>
+      </scroll-view>
+    </block>
+    <view wx:else>未搜索到查询数据</view>
+  </view>
 </view>

@@ -1,21 +1,53 @@
 <!--logs.wxml-->
 <view class="content">
-  <view class="item" wx:for="{{list}}" wx:key="id">
-    <view class="info">
-      <view><text> 门诊号</text>{{item.patCardNum}}</view>
-      <view><text> 预约医生</text>{{item.patName}}</view>
-      <view><text> 类型</text>{{item.binName}}</view>
-      <view><text> 预约日期</text>{{item.visitDate}}</view>
-      <view><text> 预约时间</text>{{item.visitTime}}</view>
-      <view><text> 地址</text>桐君堂（东新馆）</view>
-    </view>
-    <view>
-      <button 
-        type="warn" 
-        size="mini" 
-        data-info="{{item}}"
-        bindtap="cancel" disabled="{{item.appStatus == 0 ? 0 : 1}}">{{item.appStatus == 0 ? '取消预约' : item.spName}}</button>  
-    </view>
+  <view class="cont-info">
+    <block wx:if="{{!noneDate}}">
+      <view class="{{ list.length > 0 ? '' : 'hide'}}">
+        <view class="his-record">未就诊预约记录</view>
+        <view class="item" wx:for="{{list}}" wx:key="id">
+          <view class="info">
+              <view><text> 门诊号</text>{{item.patCardNum}}</view>
+              <view><text> 预约医生</text>{{item.doctorName}}</view>
+              <view><text> 类型</text>{{item.binName}}</view>
+              <view><text> 预约日期</text>{{item.visitDate}}</view>
+              <view><text> 预约时间</text>{{item.visitTime}} / {{item.serialNumber}}号</view>
+              <view><text> 地址</text>桐君堂（东新馆）</view>
+          </view>
+          <view class="{{item.isHistory ? 'hide' : ''}}">
+              <button 
+                  type="warn" 
+                  size="mini" 
+                  data-info="{{item}}"
+                  bindtap="cancel" 
+                  disabled="{{item.appStatus == 0 ? 0 : 1}}"
+              >{{item.appStatus == 0 ? '取消预约' : item.spName}} </button>  
+          </view>
+        </view>
+      </view>
+      <view class="{{ historyList.length > 0 ? '' : 'hide'}}">
+        <view class="his-record">历史预约记录</view>
+        <view class="item" wx:for="{{historyList}}" wx:key="id">
+          <view class="info">
+            <view><text> 门诊号</text>{{item.patCardNum}}</view>
+            <view><text> 预约医生</text>{{item.doctorName}}</view>
+            <view><text> 类型</text>{{item.binName}}</view>
+            <view><text> 预约日期</text>{{item.visitDate}}</view>
+            <view><text> 预约时间</text>{{item.visitTime}} / {{item.serialNumber}}号</view>
+            <view><text> 地址</text>桐君堂（东新馆）</view>
+          </view>
+          <view class="{{item.isHistory ? 'hide' : ''}}">
+            <button 
+                type="warn" 
+                size="mini" 
+                data-info="{{item}}"
+                bindtap="cancel" 
+                disabled="{{item.appStatus == 0 ? 0 : 1}}"
+            >{{item.appStatus == 0 ? '取消预约' : item.spName}} </button>  
+          </view>
+      </view>
+      </view>
+    </block>
+    <view wx:else class="no-scheduling">暂无预约记录</view>
   </view>
-  <button bindtap="goDepartment" type="primary">预约挂号</button>
+  <button class="btnPrimary" bindtap="goDepartment" type="primary">预约挂号</button>
 </view>

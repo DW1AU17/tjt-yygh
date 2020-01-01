@@ -1,0 +1,44 @@
+  .doc-item-com {
+    text-align: left;
+    padding: 20rpx 0;
+    padding-left: 20rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #eee;
+  }
+  .doc-item-com text {
+    font-size: 24rpx;
+    color: #888;
+  }
+  .doc-item-com .doctorNone {
+    text-align: center;
+    padding-top: 100%;
+    font-size: 40rpx;
+    color: #888;
+  }
+  .doc-item-com .doc-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 25rpx;
+  }
+  .doc-item-com .doc-txt {
+    height: 80%;
+    width: 75%;
+  }
+  .doc-item-com .doc-txt1 text {
+    color: #888;
+    font-size: 30rpx;
+  }
+  .doc-item-com .doc-txt1, .doc-txt2 {
+    height: 50%;
+    line-height: 165%;
+  }
+  .doc-item-com .doc-txt2 .txt-info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 28rpx;
+  }

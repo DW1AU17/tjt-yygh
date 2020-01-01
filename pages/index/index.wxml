@@ -1,5 +1,26 @@
 <!--index.wxml-->
 <view class="out-count">
+  <!-- 预约必读 -->
+  <view class="order-required {{readRequired ? 'hide' : ''}}">
+    <view class="or-top">
+      <view class="title">预约必读</view>
+      <view>
+        <view class="red">根据《浙江省省级公立医院医疗服务价格改革方案》文件精神，2019年8月1日起部分医疗服务价格有所调整，具体可查询自助机和医院官方网站！如有疑问请咨询医院工作人员！</view>
+        <view>1．名医号当天未预约不能微信挂号；</view>
+        <view>2．自费就诊当天可于手机端报到缴费，并携带就诊卡提早30分钟前往就诊科室等候就诊</view>
+        <view>3．患者若需医保支付，请于窗口付费取号</view>
+        <view>4．同一患者在同一就诊日限约2次，在同一馆区同一科室限约1次，并且七日之内限约2次</view>
+        <view>5．预约后，如不能就诊，请至少提前一天在“我的挂号”菜单中取消预约，过时将无法取消并计违约1次，违约满3次罚3个月内不能预约挂号</view>
+        <view>6．当天挂号不就诊可于当日至收费窗口退号</view>
+        <view>7．牙科预约仅限初次就诊的病人，复诊病人请打牙科预约电话预约</view>
+      </view>
+    </view>
+    <view class="or-bottom">
+      <view><checkbox bindtap="changeCheck"/>我已阅读并同意遵守预约相关规定</view>
+      <button bindtap="closeRead">预约挂号</button>
+    </view>
+  </view>  
+  <!-- 登录 -->
   <view class="container">
     <image src="../../assets/logo.jpg"></image>
     <view class="form">
@@ -13,12 +34,12 @@
       <view class="id-card">身份证号/社保卡号:</view> 
       <view class="number">
         <input 
-          placeholder="请输入您的门诊号" 
+          placeholder="请输入您的社保卡号/身份证号" 
           value="{{idCard}}" 
           bindchange="getValueId"></input>
       </view>
     </view>
-    <button size="defualt" type="primary" bindtap="toDepartment">确定</button>
+    <button type="primary" bindtap="toDepartment">确定</button>
     <view class="fs26">如有疑问,请拨打 <text bindtap="callPhone">{{telephoneNumber}}</text> 预约电话</view>
   </view>
 </view>

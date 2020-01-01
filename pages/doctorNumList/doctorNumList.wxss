@@ -3,29 +3,40 @@ page {
   font-size: 30rpx;
 }
 .content {
-  height: 100%;
+  height: calc(100vh - 130rpx);
+  overflow: scroll;
 }
 /* 医生信息 */
 .header {
   border-bottom: 1px solid #C0C0C0;
   padding: 30rpx 20rpx;
 }
+.header .h-info {
+ display: flex;
+}
 .header .doc-name {
-  font-size: 40rpx;
-  height: 130rpx;
-  width: 130rpx;
-  line-height: 130rpx;
-  border-radius: 50%;
-  margin-right: 20rpx;
-  text-align: center;
-  background-color: #64BAE2;
+  font-size: 34rpx;
+}
+.header .doc-name text {
+  color: #666;
+}
+.header .h-info image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;  
+  margin-right: 30rpx;
+}
+.header .hos-name {
+  margin-top: 20rpx;
+  color: #666;
+  font-size: 28rpx;
 }
 .header .doc-info {
   text-indent: 68rpx;
   text-align: justify;
 }
 .doc-info {
-  font-size: 32rpx;
+  font-size: 28rpx;
   margin-top: 20rpx;
   line-height: 40rpx;
   color: #666;
@@ -38,18 +49,12 @@ page {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.header .h-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 /* 号源列表 */
 .num-list {
   padding: 20rpx;
 }
 .scheduling {
-  margin-bottom: 30rpx;
+  margin-bottom: 10rpx;
 }
 .item,.left-info .bot {
   display: flex;
@@ -57,7 +62,7 @@ page {
   align-items: center;
 }
 .item {
-  border-bottom: 1px solid #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
   height: 150rpx;
 }
 .left-info {
@@ -65,18 +70,21 @@ page {
   padding: 10rpx 0;
 }
 .left-info .date {
-  margin-right: 10%;
+  margin-right: 30rpx;
 }
 .left-info .bot {
   line-height: 50rpx;
   height: 50rpx;
   color: #888;
 }
+.outpatient-type,.red {
+  font-size: 26rpx;
+}
 .red {
   color: red;
 }
 .right-btn button {
-  background-color: #2B8ACA;
+  background-color: #25bdd5;
   color: #fff;
 }
 .no-scheduling {
@@ -85,7 +93,14 @@ page {
   color: #777;
   margin-top: 40%;
 }
-
+.already {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 94%;
+  margin: 20rpx;
+}
+ 
 /* 模态框 */
 .modal,.cont {
   bottom: 0;
